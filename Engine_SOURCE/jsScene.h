@@ -1,6 +1,7 @@
 #pragma once
 #include "jsEntity.h"
 #include "jsGameObject.h"
+#include "jsCell.h"
 
 namespace js
 {
@@ -17,6 +18,8 @@ namespace js
 
 	private:
 		std::vector<GameObject*> mGameObjects;
+		std::vector<Cell*> mCells;
+		float mTime;
 	};
 
 }

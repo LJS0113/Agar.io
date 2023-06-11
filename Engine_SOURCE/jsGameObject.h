@@ -26,9 +26,8 @@ namespace js
 	private:
 		eState mState;
 		//std::vector<Component*> mComponents;
-
-		//int x;
-		//int y;
+		float x;
+		float y;
 	};
 
 }
