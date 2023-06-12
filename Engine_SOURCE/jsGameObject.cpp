@@ -25,23 +25,24 @@ namespace js
 		// 공의 움직임 구현
 		if (Input::GetKey(eKeyCode::A))
 		{
-			x -= 0.0005f;
+			x -= 0.01f;
 		}
 		if (Input::GetKey(eKeyCode::D))
 		{
-			x += 0.0005f;
+			x += 0.01f;
 		}
 		if (Input::GetKey(eKeyCode::W))
 		{
-			y += 0.0005f;
+			y += 0.01f;
 		}
 		if (Input::GetKey(eKeyCode::S))
 		{
-			y -= 0.0005f;
+			y -= 0.01f;
 		}
-
-		Vector4 pos(x, y, 0.0f, 1.0f);
-		constantBuffer->SetData(&pos);
+		Vertex ver = {};
+		ver.pos = Vector4(x, y, 0.0f, 1.0f);
+		ver.color = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+		constantBuffer->SetData(&ver);
 		constantBuffer->Bind(eShaderStage::VS);
 	}
 	void GameObject::LateUpdate()

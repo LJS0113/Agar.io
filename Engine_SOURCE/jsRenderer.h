@@ -11,7 +11,7 @@ namespace renderer
 {
 	struct Vertex
 	{
-		Vector3 pos;
+		Vector4 pos;
 		Vector4 color;
 	};
 

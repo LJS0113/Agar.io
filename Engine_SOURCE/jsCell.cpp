@@ -5,10 +5,13 @@
 namespace js
 {
 	using namespace renderer;
+	using namespace js::math;
 	Cell::Cell()
 		: mState(eState::Active)
 		, x(0.0f)
 		, y(0.0f)
+		, mColor(Vector4(0.0f, 0.0f, 0.0f, 0.0f))
+		, scale(0.0f)
 		, cellCB(nullptr)
 	{
 
@@ -18,12 +21,11 @@ namespace js
 	}
 	void Cell::Initialize()
 	{
+
 	}
 	void Cell::Update()
 	{
-		srand((unsigned)time(NULL));
-		x = ((float)(std::rand() % 2000) - 1000) / 1000;
-		y = ((float)(std::rand() % 2000) - 1000) / 1000;
+
 	}
 	void Cell::LateUpdate()
 	{
@@ -31,10 +33,14 @@ namespace js
 	void Cell::Render()
 	{
 		cellCB = new ConstantBuffer(eCBType::Transform);
+		Vector4 mPos(x, y, 0.0f, scale);
+		cellCB->Create(sizeof(Vector4)*2);
 
-		Vector4 pos(x, y, 0.0f, 1.0f);
-		cellCB->Create(sizeof(Vector4));
-		cellCB->SetData(&pos);
+		Vertex ver = {};
+		ver.pos = mPos;
+		ver.color = mColor;
+
+		cellCB->SetData(&ver);
 		cellCB->Bind(eShaderStage::VS);
 
 		renderer::mesh->BindBuffer();
