@@ -61,16 +61,16 @@ namespace renderer
 
 	void Initialize()
 	{
-		vertexes[0].pos = Vector4(-0.1f, 0.2f, 0.0f, 1.0f);
+		vertexes[0].pos = Vector4(-0.05f, 0.1f, 0.0f, 1.0f);
 		vertexes[0].color = Vector4(1.0f, 0.0f, 0.0f, 1.0f);
 
-		vertexes[1].pos = Vector4(0.1f, 0.2f, 0.0f, 1.0f);
+		vertexes[1].pos = Vector4(0.05f, 0.1f, 0.0f, 1.0f);
 		vertexes[1].color = Vector4(0.0f, 1.0f, 0.0f, 1.0f);
 
-		vertexes[2].pos = Vector4(0.1f, -0.2f, 0.0f, 1.0f);
+		vertexes[2].pos = Vector4(0.05f, -0.1f, 0.0f, 1.0f);
 		vertexes[2].color = Vector4(0.0f, 0.0f, 1.0f, 1.0f);
 
-		vertexes[3].pos = Vector4(-0.1f, -0.2f, 0.0f, 1.0f);
+		vertexes[3].pos = Vector4(-0.05f, -0.1f, 0.0f, 1.0f);
 		vertexes[3].color = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
 
 		LoadBuffer();

@@ -37,6 +37,7 @@ namespace js
 		Input::Update();
 
 		mScene->Update();
+		mScene->Destroy();
 	}
 	void Application::LateUpdate()
 	{

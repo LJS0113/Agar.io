@@ -17,9 +17,12 @@ namespace js
 		virtual void LateUpdate();
 		virtual void Render();
 
+		void Destroy();
+
 	private:
 		std::vector<GameObject*> mGameObjects;
 		std::vector<Cell*> mCells;
+		GameObject* gameObject;
 		float mTime;
 		float mRandom;
 		float x;
